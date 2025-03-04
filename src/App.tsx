@@ -1,11 +1,13 @@
-import Cart from "./components/Cart/Cart"
+import Header from "./components/Header/Header"
+import Products from "./pages/Products/Products"
 
 
 const App: React.FC = () => {
   
   return (
     <>
-      <Cart/>
+      <Header/>
+      <Products/>
     </>
   )
 }
