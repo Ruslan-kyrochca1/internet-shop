@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.main{
+    width: 1200px;
+    margin: 0 auto;
+    padding: 100px;
+    margin-top: $medium-spasing;
+    display: block;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.productList{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: start;
+}

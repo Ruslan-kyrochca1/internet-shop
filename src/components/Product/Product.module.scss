@@ -1,0 +1,35 @@
+@import "../../styles/variables";
+.productCard{
+    margin-top: 10px;
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap-reverse;
+    align-items: center;
+    border: none;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    transition: box-shadow 0.5s;
+    &:hover{
+        cursor: pointer;
+        box-shadow: 1px 1px 5px $primary-color;
+    }
+}
+
+.productImg{
+    width: 250px;
+    height: auto;
+}
+
+.productTitle{
+    margin-top: $small-spasing;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.productPrice{
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: $small-spasing;
+}
