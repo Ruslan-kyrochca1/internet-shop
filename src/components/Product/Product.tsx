@@ -1,13 +1,25 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from "./Product.module.scss"
-import sneaksImg from "../../assets/img/sneaks.jpg"
+import notFoundImg from "../../assets/img/notFound.jpeg"
+import { ProductType } from '../../types/types'
 
-const Product: React.FC = () => {
+const Product: React.FC<ProductType> = ( {title, description, price, images }) => {
+  const [imgSrc, setImgSrc] = useState(images && images.length > 0 ? images[0] : notFoundImg)
+  if(images === undefined) console.log('Finded')
+  const changeImg = () => {
+    //Если картинка не загрузилась(по причине ее некорректности)
+    setImgSrc(notFoundImg);
+  }
   return (
     <div className={styles.productCard}>
-        <img src= {sneaksImg} alt="productExample" className={styles.productImg}/>
-        <h3 className={styles.productTitle}>Кросовки с определенной маркой и доп информацией</h3>
-        <p className={styles.productPrice}>2000 Р</p>
+        <img 
+          src={imgSrc} 
+          alt="productExample" 
+          className={styles.productImg}
+          onError = {changeImg}
+        />
+        <h3 className={styles.productTitle}>{title}</h3>
+        <p className={styles.productPrice}>{price + " $"}</p>
     </div>
   )
 }
