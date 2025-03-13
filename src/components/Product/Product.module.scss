@@ -33,3 +33,16 @@
     font-weight: 500;
     margin-top: $small-spasing;
 }
+
+.cartButton{
+    margin-top: $small-spasing;
+    background-color: $primary-color;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+.cartButtonRed{
+    background-color: $second-color;
+}
