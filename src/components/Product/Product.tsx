@@ -5,6 +5,7 @@ import { ProductType } from '../../types/types'
 import { useDispatch, useSelector } from 'react-redux'
 import { addItem, removeItem } from '../../store/slices/cartSlice'
 import { RootState } from '../../store/store'
+import { CartButton } from '../CartButton/CartButton';
 
 const Product: React.FC<ProductType> = ( {id, title, description, price, images}) => {
   const dispatch = useDispatch()
@@ -12,8 +13,6 @@ const Product: React.FC<ProductType> = ( {id, title, description, price, images}
 
   const cartItem = useSelector((state: RootState) => state.cart.items)
   const isInCase = cartItem.some((item) => item.id === id);
-
-  const classButton = `${styles.cartButton} ${isInCase ? styles.cartButtonRed :''}`
 
   const handleCart = () => {
     if(isInCase){
@@ -37,10 +36,10 @@ const Product: React.FC<ProductType> = ( {id, title, description, price, images}
         />
         <h3 className={styles.productTitle}>{title}</h3>
         <p className={styles.productPrice}>{price + " $"}</p>
-        <button 
-          className={classButton}
-          onClick = {()=>{ handleCart() }}
-        >{isInCase? "Удалить из корзины" : "Добавить в корзину"}</button>
+        <CartButton 
+          isInCart={isInCase} 
+          onClick={handleCart}
+        />
     </div>
   )
 }

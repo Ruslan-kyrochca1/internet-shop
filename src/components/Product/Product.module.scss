@@ -10,6 +10,8 @@
     background-color: white;
     padding: 10px;
     border-radius: 10px;
+    animation-name: showCard;
+    animation-duration: 1s;
     transition: box-shadow 0.5s;
     &:hover{
         cursor: pointer;
@@ -34,15 +36,16 @@
     margin-top: $small-spasing;
 }
 
-.cartButton{
-    margin-top: $small-spasing;
-    background-color: $primary-color;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-}
-.cartButtonRed{
-    background-color: $second-color;
+
+
+
+@keyframes showCard {
+    from{
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
